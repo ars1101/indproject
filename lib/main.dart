@@ -134,10 +134,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                 loan_sum = edu_year_price * edu_years;
                                 loan_years = loan_years - edu_years;
                                 double a = loan_sum * loan_state / 12;
-                                double b = pow(1 + loan_state / 12, loan_years * 12 - 9)
+                                double b = pow(1 + loan_state / 12, loan_years * 12)
                                     .toDouble();
                                 double c =
-                                (pow(1 + loan_state / 12, loan_years * 1 - 9) - 1);
+                                (pow(1 + loan_state / 12, loan_years * 1) - 1);
                                 loan_after = a * b / c;
                                 print(loan_sum);
                                 print(loan_state);
@@ -150,8 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 year2 = 2*edu_year_price * 0.03 ~/ 12;
                                 year3 = 3*edu_year_price * 0.03 ~/ 12;
                                 year4 = 4*edu_year_price * 0.03 ~/ 12;
-                                yearlast = 4*edu_year_price *0.03 ~/ 12;
-                                yearsr = (year1 + year2 + year3 + year4 + yearlast) ~/ 5;
+                                yearlast = 4*edu_year_price * 0.03 ~/ 12;
+                                yearsr = (year1 + year2 + year3 + year4) ~/ 4;
                                 loan_sum = year1*12 + year2*12 + year3*12 + year4*12 + aft1*12*(loan_years - edu_years) + edu_years * edu_year_price;
                               });
                               Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext) => Results(title: '')));
@@ -284,7 +284,7 @@ class _ResultsState extends State<Results> {
                                           child: Text("Сумма платежа после обучения",
                                               style: TextStyle(fontSize: 18))),
                                       Expanded(
-                                          child: Text(aft1.toString(),
+                                          child: Text(loan_after.round().toString(),
                                               style: TextStyle(fontSize: 28)))
                                     ]))))),SizedBox(height: 30,),
                     Container(
