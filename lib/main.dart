@@ -7,9 +7,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   await Supabase.initialize(
-    url: 'https://goxrstyivptehknqtskt.supabase.co',
+    url: 'https://gxzfswhoxmcuzquqxzio.supabase.co',
     anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdveHJzdHlpdnB0ZWhrbnF0c2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4MTUwMzcsImV4cCI6MjAyNTM5MTAzN30.m6AEI_kXhCexfdbuxEAh3rLvjf8nIrYlkLaiLt8CAsw',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4emZzd2hveG1jdXpxdXF4emlvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDY5NzM3OTMsImV4cCI6MjAyMjU0OTc5M30.5-7fx9uLmXTUDO5Tz0Keb3LvSxcVY4fIRUb2n3KtUnw',
   );
   runApp(const MyApp());
 }
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
     supabase
         .from('banks')
         .select()
-        .then((value) => {banks = value, setState(() {})});
+        .then((value) => {banks = value, setState(() {}), print(banks)});
   }
 
   @override
